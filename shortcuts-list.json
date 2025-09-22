@@ -5,8 +5,14 @@
       "name": "Numerology Finder",
       "version": "3.1",
       "download_url": "https://www.icloud.com/shortcuts/f8706449137d478f90faae133d5ca249"
+    },
+    {
+      "id": "settings-lock",
+      "name": "Settings Lock",
+      "version": "1.0",
+      "download_url": "https://www.icloud.com/shortcuts/44b45bfec57a428f98164a7c4ebf10d1"
     }
   ],
-  "count": 1,
+  "count": 2,
   "last_updated": "2025-09-22"
 }

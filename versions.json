@@ -6,11 +6,18 @@
       "download_url": "https://www.icloud.com/shortcuts/f8706449137d478f90faae133d5ca249",
       "last_updated": "2025-09-22",
       "description": "Find your numerology number based on your name and birthdate"
+    },
+    "settings-lock": {
+      "name": "Settings Lock",
+      "version": "1.0",
+      "download_url": "https://www.icloud.com/shortcuts/44b45bfec57a428f98164a7c4ebf10d1",
+      "last_updated": "2025-09-22",
+      "description": "Lock your device settings with password protection"
     }
   },
   "api_info": {
     "version": "1.0",
     "last_updated": "2025-09-22",
-    "total_shortcuts": 1
+    "total_shortcuts": 2
   }
 }
