@@ -1,110 +1,124 @@
-# 📱 iOS Shortcuts Versions API
+# 🔥 Ian Musa's iOS Shortcuts API
 
-A complete versioning system for iOS Shortcuts hosted on GitHub Pages. Provides multiple API endpoints optimized for both web browsers and iPhone Shortcuts app integration.
+My personal versioning system for iOS Shortcuts hosted on GitHub Pages. This is how I manage updates and downloads for all my shortcuts with a slick dark-themed interface and multiple API endpoints.
 
-## 🚀 Quick Start
+## 🚀 Live API
 
-1. **Web Interface**: Visit your GitHub Pages URL to see all shortcuts
-2. **iPhone Shortcuts**: Use the JSON API endpoints to check versions programmatically
-3. **Direct Downloads**: Each shortcut includes an iCloud download link
+**Main Website**: https://musa-ian.github.io/Shortcuts-updates/
 
-## 📡 API Endpoints
+## 📡 My API Endpoints
 
-| Endpoint | Purpose | Best For |
-|----------|---------|----------|
-| `versions.json` | Complete database with all info | Full shortcut details, descriptions |
-| `shortcuts-list.json` | Simplified list format | Quick browsing, mobile apps |
-| `latest.json` | Version numbers only | Fast version checking |
-| `api.json` | API documentation | Understanding available endpoints |
+| Endpoint | URL | Purpose |
+|----------|-----|---------|
+| **Main Database** | https://musa-ian.github.io/Shortcuts-updates/versions.json | Complete info with descriptions |
+| **Simple List** | https://musa-ian.github.io/Shortcuts-updates/shortcuts-list.json | Clean array format |
+| **Version Check** | https://musa-ian.github.io/Shortcuts-updates/latest.json | Just ID → version mapping |
+| **API Docs** | https://musa-ian.github.io/Shortcuts-updates/api.json | Documentation |
 
-## 📱 Using with iPhone Shortcuts
+## 📱 My Current Shortcuts
 
-### Basic Version Check
+### Numerology Finder v3.1
+- **Description**: Find your numerology number based on your name and birthdate
+- **Download**: https://www.icloud.com/shortcuts/609b6287d17b43498effe6607a0f26ed
+- **API ID**: `numerology-finder`
+
+### Settings Lock v1.0
+- **Description**: Lock your Settings app with Face ID
+- **Download**: https://www.icloud.com/shortcuts/f0aaf685eecd44b8bef57fc77a47a128
+- **API ID**: `settings-lock`
+- **Requires**: [Actions App](https://apps.apple.com/app/actions/id1586435171)
+
+## 📱 How Others Can Use My API
+
+### Quick Version Check
 ```
-1. Add "Get Contents of URL" action
-2. URL: https://yourusername.github.io/Shortcuts-updates/latest.json
-3. Add "Get Value for Key" action
-4. Key: your-shortcut-id
-5. Compare result with current version
+1. Get Contents of URL: https://musa-ian.github.io/Shortcuts-updates/latest.json
+2. Get Value for Key: shortcut-id (e.g., "numerology-finder")
+3. Compare with current version
 ```
 
-### Full Shortcut Info
+### Get Full Shortcut Info
 ```
-1. Add "Get Contents of URL" action
-2. URL: https://yourusername.github.io/Shortcuts-updates/versions.json
-3. Add "Get Value for Key" actions:
-   - shortcuts.your-shortcut-id.version
-   - shortcuts.your-shortcut-id.download_url
-   - shortcuts.your-shortcut-id.description
+1. Get Contents of URL: https://musa-ian.github.io/Shortcuts-updates/versions.json
+2. Navigate: shortcuts → shortcut-id → version/download_url/description
 ```
 
-## ➕ Adding New Shortcuts
+## 🛠️ How I Manage This
 
-### 1. Update `versions.json`
+### Adding New Shortcuts
+When I release a new shortcut, I update:
+1. **versions.json** - Main database with full details
+2. **shortcuts-list.json** - Simple array format
+3. **latest.json** - Version-only format
+4. **api_info.total_shortcuts** - Increment count
+
+### My Workflow
+```bash
+# Update JSON files
+git add .
+git commit -m "Add new shortcut: [name] v[version]"
+git push origin main
+# Changes go live automatically via GitHub Pages
+```
+
+## 📁 Repository Structure
+
+```
+├── index.html              # Dark-themed web interface with my branding
+├── versions.json           # Main database (complete info)
+├── shortcuts-list.json     # Simplified array format
+├── latest.json            # Version checking format
+├── api.json               # API documentation
+└── README.md              # This file
+```
+
+## 🎨 Features
+
+- **Dark Theme**: Custom black theme with gradient accents
+- **My Branding**: "Ian Musa - iOS Shortcuts Developer"
+- **Multiple Formats**: Different JSON structures for different use cases
+- **Auto-Updates**: GitHub Pages auto-deploys changes
+- **Mobile Optimized**: Works great on iPhone/iPad
+- **Version Tracking**: Built-in API versioning
+
+## 🔧 Technical Details
+
+### JSON Structure
+My main `versions.json` follows this format:
 ```json
 {
   "shortcuts": {
-    "your-shortcut-id": {
-      "name": "Your Shortcut Name",
+    "shortcut-id": {
+      "name": "Display Name",
       "version": "1.0",
-      "download_url": "https://www.icloud.com/shortcuts/your-actual-shortcut-id",
-      "last_updated": "2024-09-22",
-      "description": "What your shortcut does"
+      "download_url": "https://www.icloud.com/shortcuts/...",
+      "last_updated": "2025-09-22",
+      "description": "What it does"
     }
+  },
+  "api_info": {
+    "version": "1.0",
+    "last_updated": "2025-09-22",
+    "total_shortcuts": 2
   }
 }
 ```
 
-### 2. Update simplified endpoints
-- Add to `shortcuts-list.json` for the list view
-- Add to `latest.json` for quick version checks
-- Update `total_shortcuts` count in `versions.json`
+### Shortcut ID Conventions
+- Lowercase with hyphens: `settings-lock`, `numerology-finder`
+- Descriptive but concise
+- Never change once published (breaks API consumers)
 
-### 3. Commit and push
-Changes go live automatically via GitHub Pages!
+## 🌟 Why I Built This
 
-## 🔧 File Structure
+- **Version Management**: Easy way to track shortcut versions
+- **Auto-Updates**: People can check for updates programmatically
+- **Professional Presence**: Showcases my shortcuts with proper branding
+- **API Experience**: Good practice building JSON APIs
+- **Open Source**: Others can fork and use for their shortcuts
 
-```
-├── index.html              # Web interface
-├── versions.json           # Main database
-├── shortcuts-list.json     # Simplified list
-├── latest.json            # Version numbers only
-├── api.json               # API documentation
-└── README.md              # This documentation
-```
+---
 
-## 🎯 Best Practices
-
-### Shortcut IDs
-- Use lowercase with hyphens: `my-awesome-shortcut`
-- Keep them short but descriptive
-- Don't change IDs once published (breaks existing shortcuts)
-
-### Version Numbers
-- Use semantic versioning: `1.0`, `1.1`, `2.0`
-- Increment for any functionality changes
-- Update `last_updated` date when changing versions
-
-### iCloud Links
-- Get the actual shortcut ID from the iCloud share URL
-- Test links before publishing
-- Format: `https://www.icloud.com/shortcuts/ACTUAL_SHORTCUT_ID`
-
-## 🔍 Example iPhone Shortcut
-
-Here's how to create a shortcut that checks for updates:
-
-1. **Get URL Contents**: `https://yourusername.github.io/Shortcuts-updates/latest.json`
-2. **Get Dictionary Value**: Key = `your-shortcut-id`
-3. **Set Variable**: Name = `LatestVersion`
-4. **If Condition**: `LatestVersion` > `CurrentVersion`
-5. **Show Notification**: "Update available!"
-
-## 🌐 GitHub Pages Setup
-
-1. Go to your repo Settings > Pages
-2. Source: Deploy from a branch
-3. Branch: `main`
-4. Folder: `/ (root)`
-5. Your API will be available at: `https://yourusername.github.io/repo-name/`
+**Created by Ian Musa** - iOS Shortcuts Developer
+**API Version**: 1.0
+**Last Updated**: September 22, 2025
