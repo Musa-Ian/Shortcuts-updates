@@ -2,7 +2,15 @@
   "shortcuts": {
     "numerology-finder": {
       "name": "Numerology Finder",
-      "version": "3.1"
+      "version": "3.1",
+      "download_url": "https://www.icloud.com/shortcuts/your-shortcut-id-here",
+      "last_updated": "2024-09-22",
+      "description": "Find your numerology number based on your name and birthdate"
     }
+  },
+  "api_info": {
+    "version": "1.0",
+    "last_updated": "2024-09-22",
+    "total_shortcuts": 1
   }
 }

@@ -1,0 +1,19 @@
+{
+  "endpoints": {
+    "all_shortcuts": "./versions.json",
+    "shortcuts_list": "./shortcuts-list.json",
+    "latest_versions": "./latest.json"
+  },
+  "usage": {
+    "get_all_data": "GET ./versions.json - Complete database with all shortcut information",
+    "get_shortcuts_list": "GET ./shortcuts-list.json - Simple list of shortcut names and versions",
+    "get_latest_versions": "GET ./latest.json - Quick version check format",
+    "get_specific_shortcut": "GET ./versions.json then filter by shortcut ID"
+  },
+  "example_ios_shortcut_usage": {
+    "step1": "Add 'Get Contents of URL' action",
+    "step2": "Use URL: https://yourusername.github.io/Shortcuts-updates/versions.json",
+    "step3": "Add 'Get Value for Key' action to get shortcuts.SHORTCUT_ID.version",
+    "step4": "Compare with your current version"
+  }
+}
