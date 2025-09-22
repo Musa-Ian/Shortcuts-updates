@@ -10,9 +10,9 @@
     "settings-lock": {
       "name": "Settings Lock",
       "version": "1.0",
-      "download_url": "https://www.icloud.com/shortcuts/44b45bfec57a428f98164a7c4ebf10d1",
+      "download_url": "https://www.icloud.com/shortcuts/099fa925e3e345c1a3c6d39aad7ff5a0",
       "last_updated": "2025-09-22",
-      "description": "Lock your device settings with password protection"
+      "description": "Lock your Settings app with Face ID"
     }
   },
   "api_info": {
