@@ -11,8 +11,14 @@
       "name": "Settings Lock",
       "version": "1.0",
       "download_url": "https://www.icloud.com/shortcuts/f0aaf685eecd44b8bef57fc77a47a128"
+    },
+    {
+      "id": "location-time",
+      "name": "Location Time",
+      "version": "1.7",
+      "download_url": "https://www.icloud.com/shortcuts/83c94f54b3f542048b237a04db6f206b"
     }
   ],
-  "count": 2,
-  "last_updated": "2025-09-22"
+  "count": 3,
+  "last_updated": "2025-10-21"
 }

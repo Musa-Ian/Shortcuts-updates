@@ -28,6 +28,11 @@ My personal versioning system for iOS Shortcuts hosted on GitHub Pages. This is 
 - **API ID**: `settings-lock`
 - **Requires**: [Actions App](https://apps.apple.com/app/actions/id1586435171)
 
+### Location Time v1.7
+- **Description**: Checks exact time for any given input location
+- **Download**: https://www.icloud.com/shortcuts/83c94f54b3f542048b237a04db6f206b
+- **API ID**: `location-time`
+
 ## 📱 How Others Can Use My API
 
 ### Quick Version Check
